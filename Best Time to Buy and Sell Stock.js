@@ -6,7 +6,7 @@ a different day in the future to sell that stock.
 Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.   */
 
 
-// Solution 1
+// Solution 1   O(N^2)   SLOWEST by 63%
 
 var maxProfit = function(prices) {
 let max = 0
@@ -23,7 +23,7 @@ return max
 
 
 
-// Solution 2
+// Solution 2   O(N)  FASTEST by 8%
 
 function maxProfit(prices) {
 	let max = 0
@@ -39,6 +39,26 @@ if(sellPrice < minPrice) minPrice = sellPrice
 	}
 return max
 }
+
+
+// Solution 3   0(N)
+
+function maxProfit(prices){
+	let l = 0,
+		r = 1,
+		maxProf = 0
+  
+	while(r < prices.length){
+	  if( prices[l] < prices[r]){
+		let prof = prices[r] - prices[l]
+		maxProf = Math.max(prof, maxProf)
+	  } else{
+		l = r
+	  }
+	  r++
+	}
+	return maxProf
+  }
 
 
 
