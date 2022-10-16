@@ -22,7 +22,7 @@ return false
     
     // Solution 3
 var containsDuplicate = function(nums) {
-    return nums.filter((el,index)=> nums.indexOf(el) !== index).length > 0
+    return nums.filter((el,index)=> nums.indexOf(el) !== index).length > 0 
 };
     
     // Solution 4
