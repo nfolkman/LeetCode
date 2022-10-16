@@ -27,6 +27,20 @@ var containsDuplicate = function(nums) {
     
     // Solution 4
 let containsDuplicate = (nums) => nums.filter((el,index)=> nums.indexOf(el) !== index).length > 0
+
+    // Solution 5 
+let containsDuplicate = (nums) => {
+    if(nums.join() === [...new Set(nums)].join()) return false
+    return true
+}
+
+    // Solution 6
+let containsDuplicate = (nums) => {
+    for(let i = 0; i<nums.length; i++){
+        if(nums.indexOf(nums[i]) !== nums.lastIndexOf(nums[i])) return true
+    }
+return false
+}
     
     
     /* test cases:
